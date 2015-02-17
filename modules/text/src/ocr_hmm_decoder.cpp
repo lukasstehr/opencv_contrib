@@ -275,6 +275,9 @@ public:
             Mat V = Mat::zeros((int)observations.size(),(int)vocabulary.size(),CV_64FC1);
             vector<string> path(vocabulary.size());
 
+            // Break loop if we don't have any observations
+            if(observations[0].size() == 0) continue;
+
             // Initialize base cases (t == 0)
             for (int i=0; i<(int)vocabulary.size(); i++)
             {
